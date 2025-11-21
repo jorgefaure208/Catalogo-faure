@@ -1,1 +1,476 @@
-<h1>HOLA FAURE</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faure Windows Inc - Impact Windows & Doors</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      background: linear-gradient(135deg, #b30000, #600000);
+      color: #fff;
+      padding: 1.25rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .contact-header {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .contact-header strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .icons-row {
+      margin-top: 0.2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .icons-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .icons-row span::before {
+      content: "●";
+      font-size: 0.5rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2.5rem;
+    }
+
+    .hero {
+      background: #fff;
+      border-radius: 0.9rem;
+      padding: 1.4rem 1.3rem 1.6rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.3rem;
+    }
+
+    .hero-text h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.35rem;
+      color: #b30000;
+    }
+
+    .hero-text h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #333;
+    }
+
+    .hero-text p {
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-bullets li {
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-bullets li::before {
+      content: "✓ ";
+      color: #0a7d00;
+      font-weight: 700;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .btn-main {
+      background: #b30000;
+      color: #fff;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-cta small {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .hero-photo {
+      border-radius: 0.8rem;
+      overflow: hidden;
+      border: 3px solid #eee;
+      background: #000;
+    }
+
+    .hero-photo img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    section {
+      margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      color: #b30000;
+      letter-spacing: 0.03em;
+    }
+
+    .promos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .promo-card {
+      background: #fff;
+      border-radius: 0.9rem;
+      padding: 0.95rem 1rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      border-top: 3px solid #b30000;
+      font-size: 0.9rem;
+    }
+
+    .promo-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .promo-card p {
+      font-size: 0.9rem;
+    }
+
+    .promo-pill {
+      display: inline-block;
+      margin-bottom: 0.3rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #ffe8e8;
+      color: #b30000;
+      font-weight: 600;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 0.8rem;
+    }
+
+    .gallery-item img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-item div {
+      padding: 0.5rem 0.6rem 0.6rem;
+    }
+
+    .steps {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .steps li {
+      margin-bottom: 0.45rem;
+    }
+
+    .steps li span {
+      font-weight: 700;
+      color: #b30000;
+    }
+
+    .contact-box {
+      background: #fff;
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+      font-size: 0.9rem;
+    }
+
+    .contact-box strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-links {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      font-size: 0.83rem;
+    }
+
+    .chip span {
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      padding: 0.8rem 0.5rem 1.4rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: static;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-header {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="logo-title">FAURE WINDOWS INC</div>
+        <div class="tagline">Impact Windows &amp; Doors – Miami-Dade / Broward</div>
+      </div>
+
+      <div class="contact-header">
+        <strong>📞 (786) 857-5921</strong>
+        <div class="icons-row">
+          <span>Instagram: @faurewindowsinc</span>
+          <span>WhatsApp Direct</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Protect Your Home with Impact Windows &amp; Doors</h1>
+        <h2>Professional installation, clean finishes and fast service in South Florida.</h2>
+
+        <p>
+          Faure Windows Inc specializes in the installation of high-quality impact windows and doors for
+          houses, townhouses and apartments in Miami-Dade and Broward (including Kendall).
+        </p>
+
+        <ul class="hero-bullets">
+          <li>Hurricane protection and better security against break-ins.</li>
+          <li>Noise reduction and better energy efficiency.</li>
+          <li>We work with homeowners, investors, HOAs and contractors.</li>
+        </ul>
+
+        <div class="hero-cta">
+          <a href="https://wa.me/17868575921" class="btn-main" target="_blank">
+            💬 Get Your FREE Estimate on WhatsApp
+          </a>
+          <small>No obligation – we visit your property and measure everything.</small>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <!-- Usa una de tus fotos subidas al repositorio -->
+        <img src="IMG_4030.jpeg" alt="Impact windows installed by Faure Windows Inc" />
+      </div>
+    </section>
+
+    <!-- PROMOCIONES -->
+    <section>
+      <h2>🔥 Current Promotions</h2>
+
+      <div class="promos">
+        <article class="promo-card">
+          <div class="promo-pill">SPECIAL OFFER</div>
+          <h3>10% OFF – Products &amp; Installation</h3>
+          <p>
+            Get 10% OFF on impact windows and doors plus professional installation when you quote with
+            Faure Windows Inc and schedule your project this season.
+          </p>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-pill">REFERRAL BONUS</div>
+          <h3>$100 for Each Approved Referral</h3>
+          <p>
+            Recommend Faure Windows Inc to a friend or neighbor. If their project is approved and installed,
+            you receive <strong>$100</strong> as a thank-you bonus.
+          </p>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-pill">FREE ESTIMATE</div>
+          <h3>On-Site Visit &amp; Measurement</h3>
+          <p>
+            We go to your property, inspect the openings, take measurements and explain the best options for
+            your budget, with no cost and no pressure.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section>
+      <h2>🏡 Recent Projects</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="IMG_4144.jpeg" alt="Impact doors and windows project 1" />
+          <div>Modern impact windows installed on a single-family home.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_4241.png" alt="Impact doors and windows project 2" />
+          <div>Sliding impact doors with clean, professional finish.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_4610.jpeg" alt="Impact doors and windows project 3" />
+          <div>Before &amp; after upgrade from regular windows to impact.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_4942.jpeg" alt="Impact doors and windows project 4" />
+          <div>Detail work on frames and caulking for better sealing.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section>
+      <h2>🛠️ How We Work</h2>
+      <ul class="steps">
+        <li><span>1. Contact:</span> You send us a WhatsApp message or call (786) 857-5921.</li>
+        <li><span>2. Free Visit:</span> We visit your home, measure and explain all the options.</li>
+        <li><span>3. Proposal:</span> You receive a clear quote with materials, labor and time.</li>
+        <li><span>4. Installation:</span> Clean and careful installation of your impact windows and doors.</li>
+        <li><span>5. Final Review:</span> We walk through the project with you and make sure everything looks perfect.</li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section>
+      <h2>📲 Contact Faure Windows Inc</h2>
+      <div class="contact-box">
+        <strong>Let’s schedule your FREE estimate:</strong>
+        <div>📞 Phone / WhatsApp: <strong>(786) 857-5921</strong></div>
+        <div>📍 Service area: Miami-Dade, Kendall, Broward and surroundings.</div>
+
+        <div class="contact-links">
+          <a class="chip" href="https://wa.me/17868575921" target="_blank">
+            <span>WhatsApp</span> Chat now
+          </a>
+          <a class="chip" href="https://www.instagram.com/faurewindowsinc" target="_blank">
+            <span>Instagram</span> @faurewindowsinc
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Faure Windows Inc – Impact Windows &amp; Doors. All rights reserved.
+  </footer>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
