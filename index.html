@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Faure Windows Inc | Impact Windows & Doors Miami</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Faure Windows Inc. Instalación profesional de ventanas y puertas de impacto en Miami-Dade y Broward. Presupuesto gratis, 10% OFF en instalación y referencias pagadas.">
+  <style>
+    :root {
+      --primary: #c8102e;   /* rojo impacto */
+      --primary-dark: #8f0620;
+      --accent: #f0b53a;    /* dorado */
+      --bg: #05070b;
+      --card: #111622;
+      --text: #f5f5f5;
+      --muted: #9ba3b5;
+      --border: #262c3a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141b2c 0, #05070b 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 7, 11, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .logo span:last-child {
+      font-weight: 400;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 720px) {
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45rem 0.95rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: #fff;
+        font-size: 0.85rem;
+        border: 1px solid rgba(0, 0, 0, 0.45);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+      .nav-cta span.icon {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 2.6rem 0 2.4rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 3fr 2.5fr;
+        gap: 2.8rem;
+        align-items: center;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 181, 58, 0.4);
+      background: rgba(10, 15, 28, 0.9);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow span.badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #23d18b;
+      box-shadow: 0 0 10px rgba(35, 209, 139, 0.8);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw + 1.4rem, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 span.highlight {
+      background: linear-gradient(135deg, #ffffff, #f0b53a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--muted);
+    }
+
+    .hero-list span.bullet {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(200, 16, 46, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-outline {
+      background: rgba(8, 12, 22, 0.9);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: rgba(18, 24, 39, 0.95);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-note strong {
+      color: #fff;
+     
